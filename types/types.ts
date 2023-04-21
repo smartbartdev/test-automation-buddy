@@ -8,5 +8,5 @@ export interface GenerationBody {
   unhappyFlowTests: boolean;
   seperateClassesPerEndpoint: boolean;
   model: OpenAIModel;
-  apiKey: string;
+  openaikey: string;
 }
