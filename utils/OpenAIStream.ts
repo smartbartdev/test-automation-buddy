@@ -3,14 +3,14 @@ import {createParser, ParsedEvent, ReconnectInterval} from "eventsource-parser";
 export const OpenAIStream = async (
     prompt: string,
     model: string,
-    key: string,
+    openaikey: string,
 ) => {
     const system = { role: 'system', content: prompt };
 
     const res = await fetch(`https://api.openai.com/v1/chat/completions`, {
         headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${key || process.env.OPENAI_API_KEY}`,
+            Authorization: `Bearer ${openaikey || process.env.OPENAI_API_KEY}`,
         },
         method: 'POST',
         body: JSON.stringify({

@@ -7,7 +7,7 @@ export const config = {
 
 const handler = async (req: Request): Promise<Response> => {
     try {
-        const {input, outputProgrammingLanguage, frameworks, specificTools, unhappyFlowTests, model, apiKey} =
+        const {input, outputProgrammingLanguage, frameworks, specificTools, unhappyFlowTests, model, openaikey} =
             (await req.json()) as GenerationBody;
 
         const stream = await OpenAIStream_C2UT(
@@ -17,7 +17,7 @@ const handler = async (req: Request): Promise<Response> => {
             specificTools,
             unhappyFlowTests,
             model,
-            apiKey,
+            openaikey,
         );
 
         return new Response(stream);

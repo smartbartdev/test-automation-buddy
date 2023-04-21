@@ -26,7 +26,7 @@ export const OpenAIKeyModelComponent: React.FC<OpenAIKeyModelProps> = ({
                         id="openaikey"
                         type="password"
                         value={openaikey}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => setOpenAiAPIKey(e.target.value)}
+                        onChange={e => setOpenAiAPIKey(e.target.value)}
                         placeholder={'sk-...'}
                     />
                 </Box>
@@ -36,7 +36,7 @@ export const OpenAIKeyModelComponent: React.FC<OpenAIKeyModelProps> = ({
                     <Select
                         id="language"
                         value={model}
-                        onChange={(e: ChangeEvent<HTMLSelectElement>) => setModel(e.target.value as OpenAIModel)}
+                        onChange={e => setModel(e.target.value as OpenAIModel)}
                     >
                         <option value="gpt-3.5-turbo">GPT-3.5</option>
                         <option value="gpt-4">GPT-4</option>

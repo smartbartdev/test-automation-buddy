@@ -1,14 +1,10 @@
 import {
     Box,
-    Button,
     Center, Checkbox,
     Container,
     Heading,
-    Input, Link,
-    Select,
-    Spacer,
+    Input,
     Text,
-    Textarea
 } from "@chakra-ui/react";
 import React, {useState} from "react";
 import {OpenAIModel} from "@/types/types";
@@ -16,7 +12,6 @@ import {CopyBlock, dracula} from "react-code-blocks";
 import {FileInput} from "@/components/FileInput";
 import {PageTitle} from "@/components/PageTitle";
 import {OpenAIKeyModelComponent} from "@/components/OpenAIKeyModelComponent";
-import {programmingLanguages} from "@/utils/programmingLanguages";
 import {ProgrammingLanguageSelect} from "@/components/ProgrammingLanguageSelect";
 import {InputTextArea} from "@/components/InputTextArea";
 import {GenerateButton} from "@/components/GenerateButton";

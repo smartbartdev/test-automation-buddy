@@ -7,7 +7,7 @@ export const config = {
 
 const handler = async (req: Request): Promise<Response> => {
     try {
-        const {input, outputProgrammingLanguage, frameworks, specificTools, unhappyFlowTests, seperateClassesPerEndpoint, model, apiKey} =
+        const {input, outputProgrammingLanguage, frameworks, specificTools, unhappyFlowTests, seperateClassesPerEndpoint, model, openaikey} =
             (await req.json()) as GenerationBody;
 
         const stream = await OpenAIStream_OA2T(
@@ -18,7 +18,7 @@ const handler = async (req: Request): Promise<Response> => {
             unhappyFlowTests,
             seperateClassesPerEndpoint,
             model,
-            apiKey,
+            openaikey,
         );
 
         return new Response(stream);

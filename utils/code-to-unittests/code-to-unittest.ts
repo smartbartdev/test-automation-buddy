@@ -22,9 +22,9 @@ export const OpenAIStream_C2UT = async (
   specificTools: string,
   unhappyFlowTests: boolean,
   model: string,
-  key: string,
+  openaikey: string,
 ) => {
   const prompt = createPrompt(input, outputProgrammingLanguage, frameworks, specificTools, unhappyFlowTests);
 
-  return OpenAIStream(prompt, model, key);
+  return OpenAIStream(prompt, model, openaikey);
 };

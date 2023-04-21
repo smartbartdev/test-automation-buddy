@@ -46,9 +46,9 @@ export const OpenAIStream_OA2T = async (
   unhappyFlowTests: boolean,
   separateClassesPerEndpoint: boolean,
   model: string,
-  key: string,
+  openaikey: string,
 ) => {
   const prompt = createPrompt(input, outputProgrammingLanguage, frameworks, specificTools, unhappyFlowTests, separateClassesPerEndpoint);
 
-  return OpenAIStream(prompt, model, key);
+  return OpenAIStream(prompt, model, openaikey);
 };

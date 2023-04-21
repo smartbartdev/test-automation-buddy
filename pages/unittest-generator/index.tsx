@@ -1,23 +1,16 @@
 import {
     Box,
-    Button,
     Center, Checkbox,
     Container,
     Heading,
-    Input, Link,
-    Select,
-    Spacer,
+    Input,
     Text,
-    Textarea
 } from "@chakra-ui/react";
 import React, {useState} from "react";
 import {OpenAIModel} from "@/types/types";
 import {CopyBlock, dracula} from "react-code-blocks";
-import NextLink from "next/link";
-import {ArrowBackIcon} from "@chakra-ui/icons";
 import {PageTitle} from "@/components/PageTitle";
 import {OpenAIKeyModelComponent} from "@/components/OpenAIKeyModelComponent";
-import {programmingLanguages} from "@/utils/programmingLanguages";
 import {ProgrammingLanguageSelect} from "@/components/ProgrammingLanguageSelect";
 import {InputTextArea} from "@/components/InputTextArea";
 import {GenerateButton} from "@/components/GenerateButton";
@@ -60,7 +53,7 @@ export default function UnittestGenerator() {
             specificTools,
             unhappyFlowTests,
             model,
-            openaikey,
+            openaikey
         };
 
         const response = await fetch('/api/code-to-unittest', {
@@ -112,7 +105,8 @@ export default function UnittestGenerator() {
 
                 <PageTitle title={'Unit test generator'}/>
 
-                <OpenAIKeyModelComponent openaikey={openaikey} model={model} setOpenAiAPIKey={setOpenAiAPIKey} setModel={setModel}/>
+                <OpenAIKeyModelComponent openaikey={openaikey} model={model} setOpenAiAPIKey={setOpenAiAPIKey}
+                                         setModel={setModel}/>
 
                 <Container paddingLeft={'20px'}>
                     <Box paddingTop={'20px'}>
@@ -124,7 +118,8 @@ export default function UnittestGenerator() {
 
                         <InputTextArea title={'Class or function'} input={input} setInput={setInput}/>
 
-                        <ProgrammingLanguageSelect outputProgrammingLanguage={outputProgrammingLanguage} setOPL={setOPL}/>
+                        <ProgrammingLanguageSelect outputProgrammingLanguage={outputProgrammingLanguage}
+                                                   setOPL={setOPL}/>
 
                         <Box>
                             <Text align={'center'}>Frameworks</Text>
@@ -147,7 +142,8 @@ export default function UnittestGenerator() {
                     </Box>
                 </Container>
             </Box>
-            <Box>
+            <Box
+            >
                 <Box>
                     <Box>
                         <Center>
